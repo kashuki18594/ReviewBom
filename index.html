@@ -20,7 +20,7 @@
     ZOHO.embeddedApp.on("PageLoad", function (BOMData) {
       console.log("BOM Data:", BOMData);
       // window.BOMID = BOMData?.EntityId?.[0];
-      window.BOMID = BOMData?.EntityId?.[0] || BOMData?.EntityId;
+      window.BOMID = BOMData?.EntityId;
 
       ZOHO.CRM.UI.Resize({
         height: "100%",
