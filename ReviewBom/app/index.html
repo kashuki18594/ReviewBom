@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>reviewbom</title>
+  <script src="https://live.zwidgets.com/js-sdk/1.2/ZohoEmbededAppSDK.min.js"></script>
+  <script type="module" crossorigin src="./assets/index-yRcVEA9_.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-D5YgK0Ku.css">
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    /*
+     * Subscribe to the EmbeddedApp onPageLoad event before initializing
+     */
+
+    ZOHO.embeddedApp.on("PageLoad", function (BOMData) {
+      console.log("BOM Data:", BOMData);
+      // window.BOMID = BOMData?.EntityId?.[0];
+      window.BOMID = BOMData?.EntityId;
+
+      ZOHO.CRM.UI.Resize({
+        height: "100%",
+        width: "100%"
+      }).then(function (response) {
+        console.log(response);
+      });
+    });
+
+    
+
+    /*
+     * initializing the widget.
+     */
+    ZOHO.embeddedApp.init();
+  </script>
+
+</html>
